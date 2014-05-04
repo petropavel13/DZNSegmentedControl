@@ -10,7 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol DZNSegmentedControlDelegate;
+/**
+ * The DZNSegmentedControlDelegate protocol defines the interface that DZNSegmentedControl delegate objects implement to manage the segmented control behavior. This protocol declares no methods of its own but conforms to the UIBarPositioningDelegate protocol to support the positioning of a segmented control when it is moved to a window.
+ */
+@protocol DZNSegmentedControlDelegate <UIBarPositioningDelegate> @end
 
 /**
  * A drop-in replacement for UISegmentedControl showing multiple segment counts, to be used typically on a user profile.
@@ -18,15 +21,13 @@
 @interface DZNSegmentedControl : UIControl <UIBarPositioning, UIAppearance>
 
 /** The control's delegate object, conforming to the UIBarPositioning protocol. */
-@property (nonatomic, weak) id <DZNSegmentedControlDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<DZNSegmentedControlDelegate> delegate;
 /** The items displayed on the control. */
-@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, strong) NSArray *items;
 /** The index number identifying the selected segment (that is, the last segment touched). */
 @property (nonatomic) NSInteger selectedSegmentIndex;
 /** Returns the number of segments the receiver has. */
 @property (nonatomic, readonly) NSUInteger numberOfSegments;
-/** The height of the control. Default is 56px. */
-@property (nonatomic, readonly) CGFloat height;
 /** The height of the selection indicator. Default is 2px . */
 @property (nonatomic, readwrite) CGFloat selectionIndicatorHeight UI_APPEARANCE_SELECTOR;
 /** The duration of the indicator's animation. Default is 0.2 sec. */
@@ -50,15 +51,26 @@
  * @params items An array of NSString objects only.
  * @returns A DZNSegmentedControl object or nil if there was a problem in initializing the object.
  */
-- (id)initWithItems:(NSArray *)items;
+- (instancetype)initWithItems:(NSArray *)items;
 
 /**
  * Sets the title of a segment.
  *
  * @param title A string to display in the segment as its title.
- * @param segment An index number identifying a segment in the control. It must be a number between 0 and the number of segments (numberOfSegments) minus 1; values exceeding this upper range are pinned to it.
+ * @param segment An index number identifying a segment in the control. It must be a number between 0 and the number of segments (numberOfSegments) minus 1;
  */
 - (void)setTitle:(NSString *)title forSegmentAtIndex:(NSUInteger)segment;
+
+/**
+ * @param title A string to display in the segment as its title.
+ * @param segment An index number identifying a segment in the control. It must be a number between 0 and the number of segments (possible last segment number -> (last index + 1)); values exceeding this upper range are pinned to it.
+ */
+- (void)insertSegmentWithTitle:(NSString *)title atIndex:(NSUInteger)segment;
+
+/**
+ * @param segment An index number identifying a segment in the control. It must be a number between 0 and the number of segments (numberOfSegments) minus 1;
+ */
+- (void)removeSegmentAtIndex:(NSUInteger)segment;
 
 /**
  * Sets the title color for a particular state.
@@ -105,10 +117,4 @@
  */
 - (void)removeAllSegments;
 
-@end
-
-/**
- * The DZNSegmentedControlDelegate protocol defines the interface that DZNSegmentedControl delegate objects implement to manage the segmented control behavior. This protocol declares no methods of its own but conforms to the UIBarPositioningDelegate protocol to support the positioning of a segmented control when it is moved to a window.
- */
-@protocol DZNSegmentedControlDelegate <UIBarPositioningDelegate>
 @end

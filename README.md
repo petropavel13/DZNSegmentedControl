@@ -9,6 +9,7 @@ A drop-in replacement for UISegmentedControl for showing counts, to be used typi
 * Customizable control with tint color, font, sizes and animation duration.
 * Animated and width auto-adjusting selection indicator.
 * UIBarPositioning support.
+* Storyboard support
 * UIAppearance support.
 * ARC & 64bits.
 <br>
@@ -33,12 +34,12 @@ Import "DZNSegmentedControl.h"
 Creating a new instance of DZNSegmentedControl is very similar to what you would do with UISegmentedControl:
 ```
 NSArray *items = @[@"Tweets", @"Following", @"Followers"];
-    
+
 DZNSegmentedControl *control = [[DZNSegmentedControl alloc] initWithItems:items];
 control.tintColor = [UIColor blueColor];
 control.delegate = self;
 control.selectedSegmentIndex = 1;
-    
+
 [control addTarget:self action:@selector(selectedSegment:) forControlEvents:UIControlEventValueChanged];
 ````
 
