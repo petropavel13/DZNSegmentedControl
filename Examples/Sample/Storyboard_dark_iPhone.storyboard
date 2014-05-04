@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZFR-Es-mRC">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Main Table View Controller - DZNSegmentedControl-->
+        <scene sceneID="gmy-c9-Wd7">
+            <objects>
+                <tableViewController id="xh7-Qn-KUs" customClass="MainTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="odp-NX-su6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="UdM-XU-ugS" customClass="DZNSegmentedControl">
+                            <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="selectedSegmentChanged:" destination="xh7-Qn-KUs" eventType="valueChanged" id="J6C-gA-1oH"/>
+                            </connections>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="xh7-Qn-KUs" id="Hpm-j3-pG2"/>
+                            <outlet property="delegate" destination="xh7-Qn-KUs" id="oZv-d4-ho2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="DZNSegmentedControl" id="k7R-4n-5lS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="9uh-DA-9Eb">
+                            <connections>
+                                <action selector="deleteSegmentClicked:" destination="xh7-Qn-KUs" id="pce-db-m18"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gdy-Jv-Jbv">
+                            <connections>
+                                <action selector="addSegmentClicked:" destination="xh7-Qn-KUs" id="Bp0-dh-dbI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="UdM-XU-ugS" id="nzD-Y7-vHz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KV-zt-fzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qQR-OC-et4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZFR-Es-mRC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qSU-Ch-dAc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xh7-Qn-KUs" kind="relationship" relationship="rootViewController" id="SI9-RR-OUH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPg-jG-vso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="134"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

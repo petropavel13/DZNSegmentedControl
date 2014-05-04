@@ -14,8 +14,10 @@
 		4FFE32D318C56B5100C3A85F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE32D218C56B5100C3A85F /* main.m */; };
 		4FFE32D718C56B5100C3A85F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE32D618C56B5100C3A85F /* AppDelegate.m */; };
 		4FFE32D918C56B5100C3A85F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE32D818C56B5100C3A85F /* Images.xcassets */; };
-		4FFE32FA18C59A9E00C3A85F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE32F918C59A9E00C3A85F /* ViewController.m */; };
 		4FFF8D3218CF5A9F00300D35 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF8D3118CF5A9F00300D35 /* DZNSegmentedControl.m */; };
+		92D902801915601A009B97C0 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D9027F1915601A009B97C0 /* Storyboard_iPhone.storyboard */; };
+		92D90283191560DD009B97C0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D90282191560DD009B97C0 /* MainTableViewController.m */; };
+		92D9028519163D57009B97C0 /* Storyboard_dark_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D9028419163D57009B97C0 /* Storyboard_dark_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +32,12 @@
 		4FFE32D518C56B5100C3A85F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FFE32D618C56B5100C3A85F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4FFE32D818C56B5100C3A85F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4FFE32DF18C56B5100C3A85F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4FFE32F818C59A9E00C3A85F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4FFE32F918C59A9E00C3A85F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4FFF8D3018CF5A9F00300D35 /* DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNSegmentedControl.h; sourceTree = "<group>"; };
 		4FFF8D3118CF5A9F00300D35 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
+		92D9027F1915601A009B97C0 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		92D90281191560DD009B97C0 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		92D90282191560DD009B97C0 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		92D9028419163D57009B97C0 /* Storyboard_dark_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_dark_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +78,6 @@
 				4FFE32C618C56B5100C3A85F /* Foundation.framework */,
 				4FFE32C818C56B5100C3A85F /* CoreGraphics.framework */,
 				4FFE32CA18C56B5100C3A85F /* UIKit.framework */,
-				4FFE32DF18C56B5100C3A85F /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,10 +87,12 @@
 			children = (
 				4FFE32D518C56B5100C3A85F /* AppDelegate.h */,
 				4FFE32D618C56B5100C3A85F /* AppDelegate.m */,
-				4FFE32F818C59A9E00C3A85F /* ViewController.h */,
-				4FFE32F918C59A9E00C3A85F /* ViewController.m */,
 				4FFE32D818C56B5100C3A85F /* Images.xcassets */,
 				4FFE32CD18C56B5100C3A85F /* Supporting Files */,
+				92D90281191560DD009B97C0 /* MainTableViewController.h */,
+				92D90282191560DD009B97C0 /* MainTableViewController.m */,
+				92D9027F1915601A009B97C0 /* Storyboard_iPhone.storyboard */,
+				92D9028419163D57009B97C0 /* Storyboard_dark_iPhone.storyboard */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -166,7 +170,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D9028519163D57009B97C0 /* Storyboard_dark_iPhone.storyboard in Resources */,
 				4FFE32D118C56B5100C3A85F /* InfoPlist.strings in Resources */,
+				92D902801915601A009B97C0 /* Storyboard_iPhone.storyboard in Resources */,
 				4FFE32D918C56B5100C3A85F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,9 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFE32FA18C59A9E00C3A85F /* ViewController.m in Sources */,
 				4FFE32D318C56B5100C3A85F /* main.m in Sources */,
 				4FFE32D718C56B5100C3A85F /* AppDelegate.m in Sources */,
+				92D90283191560DD009B97C0 /* MainTableViewController.m in Sources */,
 				4FFF8D3218CF5A9F00300D35 /* DZNSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

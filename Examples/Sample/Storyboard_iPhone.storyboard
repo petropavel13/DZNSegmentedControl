@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zIi-Yv-psu">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Main Table View Controller - DZNSegmentedControl-->
+        <scene sceneID="3P5-81-lsf">
+            <objects>
+                <tableViewController id="3O2-gw-vIX" customClass="MainTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Yhm-zX-bcG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="jrG-cb-HQp" customClass="DZNSegmentedControl">
+                            <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="selectedSegmentChanged:" destination="3O2-gw-vIX" eventType="valueChanged" id="22m-Sa-66Q"/>
+                            </connections>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="3O2-gw-vIX" id="2uX-vW-TGj"/>
+                            <outlet property="delegate" destination="3O2-gw-vIX" id="5Vr-RB-QA8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="DZNSegmentedControl" id="WMD-0c-psq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="XnN-qj-HbW">
+                            <connections>
+                                <action selector="deleteSegmentClicked:" destination="3O2-gw-vIX" id="mb2-NK-Dgu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RWO-kk-jzx">
+                            <connections>
+                                <action selector="addSegmentClicked:" destination="3O2-gw-vIX" id="Wof-MB-e3v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="jrG-cb-HQp" id="G23-t1-WD1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eC2-jz-FvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="150"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tK9-37-5ON">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zIi-Yv-psu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d3c-dq-ssB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3O2-gw-vIX" kind="relationship" relationship="rootViewController" id="80T-CC-8kw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8g-W6-1Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="150"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
